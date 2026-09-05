@@ -144,7 +144,7 @@ function App() {
           <div className="hero-copy">
             <p className="eyebrow">Friends helping friends</p>
             <h1>
-              Shared EMI Manager by DS<span className="heading-dot">.</span>
+              Shared EMI Manager EMI Group<span className="heading-dot">.</span>
             </h1>
             <p>Where “bro, I’ll pay tomorrow” meets an actual calendar.</p>
             <div className="member-line">
