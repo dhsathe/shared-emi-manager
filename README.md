@@ -24,7 +24,7 @@ The React app runs on `http://localhost:5173` and the Express API runs on `http:
 
 ## Deployment
 
-The frontend builds with `npm run build` and is configured for Netlify in `netlify.toml`. SQLite is suitable for local development, but Netlify's serverless filesystem is not persistent. For production, move the API to Netlify Functions and use a hosted database such as Supabase, Neon, or PlanetScale, then configure the frontend API URL with an environment variable.
+The frontend builds with `npm run build` and is configured for Netlify in `netlify.toml`. Local development uses SQLite through `server/api.js`; the deployed site uses the Netlify Function in `netlify/functions/emis.mjs` with Netlify Blobs for persistent EMI records.
 
 ## CI/CD
 

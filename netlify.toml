@@ -2,6 +2,19 @@
   command = "npm run build"
   publish = "dist"
 
+ [build.environment]
+   NODE_VERSION = "22.12.0"
+
+[[redirects]]
+  from = "/api/emis/*"
+  to = "/.netlify/functions/emis/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/api/emis"
+  to = "/.netlify/functions/emis"
+  status = 200
+
 [[redirects]]
   from = "/*"
   to = "/index.html"

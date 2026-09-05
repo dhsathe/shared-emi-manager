@@ -835,6 +835,9 @@ footer strong {
   letter-spacing: 0.2px;
 }
 dialog {
+  position: fixed;
+  inset: 24px 0 auto;
+  margin: 0 auto;
   width: min(92vw, 420px);
   padding: 0;
   border: 0;
@@ -905,6 +908,11 @@ dialog {
 dialog::backdrop {
   background: rgba(25, 31, 25, 0.32);
   backdrop-filter: blur(2px);
+}
+@media (max-width: 600px) {
+  dialog {
+    inset: 16px 0 auto;
+  }
 }
 .app-shell.dark {
   --paper: #20251f;
