@@ -53,17 +53,18 @@ function App() {
     const response = await fetch(url, options);
     if (!response.ok)
       throw new Error((await response.json()).error || "Request failed.");
-    await loadEmis();
+    return response.status === 204 ? null : response.json();
   }
 
   async function submit(event) {
     event.preventDefault();
     try {
-      await changeEmi("/api/emis", {
+      const createdEmi = await changeEmi("/api/emis", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...form, amount: Number(form.amount) }),
       });
+      setEmis((currentEmis) => [...currentEmis, createdEmi]);
       setDialogOpen(false);
       setForm({
         name: "",
@@ -78,7 +79,12 @@ function App() {
 
   async function toggle(id) {
     try {
-      await changeEmi(`/api/emis/${id}/toggle`, { method: "PATCH" });
+      const updatedEmi = await changeEmi(`/api/emis/${id}/toggle`, {
+        method: "PATCH",
+      });
+      setEmis((currentEmis) =>
+        currentEmis.map((emi) => (emi.id === id ? updatedEmi : emi)),
+      );
     } catch (actionError) {
       setError(actionError.message);
     }
@@ -86,6 +92,7 @@ function App() {
   async function remove(id) {
     try {
       await changeEmi(`/api/emis/${id}`, { method: "DELETE" });
+      setEmis((currentEmis) => currentEmis.filter((emi) => emi.id !== id));
     } catch (actionError) {
       setError(actionError.message);
     }
