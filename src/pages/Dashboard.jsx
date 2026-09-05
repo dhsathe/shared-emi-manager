@@ -474,7 +474,7 @@ function App() {
                 onChange={(event) =>
                   setForm({ ...form, name: event.target.value })
                 }
-                placeholder="e.g. Home Loan"
+                placeholder="e.g. HDFC EMI"
               />
             </label>
             <div className="form-row">
