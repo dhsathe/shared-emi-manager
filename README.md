@@ -25,3 +25,15 @@ The React app runs on `http://localhost:5173` and the Express API runs on `http:
 ## Deployment
 
 The frontend builds with `npm run build` and is configured for Netlify in `netlify.toml`. SQLite is suitable for local development, but Netlify's serverless filesystem is not persistent. For production, move the API to Netlify Functions and use a hosted database such as Supabase, Neon, or PlanetScale, then configure the frontend API URL with an environment variable.
+
+## CI/CD
+
+GitHub Actions runs `npm ci` and `npm run build` for every push to `main` and every pull request targeting `main`. The workflow is defined in `.github/workflows/ci.yml`.
+
+To enable continuous deployment, connect the GitHub repository to Netlify and set:
+
+- Build command: `npm run build`
+- Publish directory: `dist`
+- Production branch: `main`
+
+After that, a successful push to `main` runs the GitHub build check and Netlify publishes the new frontend automatically.
