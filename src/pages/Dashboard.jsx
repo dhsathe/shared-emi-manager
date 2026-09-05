@@ -96,7 +96,7 @@ function App() {
       <aside className="sidebar">
         <div className="brand">
           <span className="brand-mark">✓</span>
-          <span>EMI Group</span>
+          <span>Shared EMI Manager</span>
         </div>
         <div className="sidebar-section-label">Workspace</div>
         <nav className="main-nav">
@@ -120,7 +120,7 @@ function App() {
           </div>
           <div className="user-chip">
             <span className="avatar">D</span>
-            <span>EMI Group</span>
+            <span>Shared EMI Manager</span>
             <span className="more">•••</span>
           </div>
         </div>
@@ -128,7 +128,7 @@ function App() {
       <main className="main-content" id="overview">
         <header className="topbar">
           <div className="breadcrumb">
-            <span>EMI Group</span>
+            <span>Shared EMI Manager</span>
             <span>/</span>
             <strong>Group overview</strong>
           </div>
@@ -144,7 +144,7 @@ function App() {
           <div className="hero-copy">
             <p className="eyebrow">Friends helping friends</p>
             <h1>
-              EMI Group<span className="heading-dot">.</span>
+              Shared EMI Manager<span className="heading-dot">.</span>
             </h1>
             <p>Where “bro, I’ll pay tomorrow” meets an actual calendar.</p>
             <div className="member-line">
@@ -174,7 +174,7 @@ function App() {
           <div className="section-header">
             <div>
               <h2>The group</h2>
-              <p>Our EMI Group members and their familiar names.</p>
+              <p>Our shared payment group and their familiar names.</p>
             </div>
             <span className="member-count">12 members</span>
           </div>
@@ -205,7 +205,7 @@ function App() {
               Saturday, September 5, 2026 · Group check-in
             </p>
             <h2>
-              Good morning, EMI Group<span className="heading-dot">.</span>
+              Good morning, Shared EMI Manager<span className="heading-dot">.</span>
             </h2>
             <p className="subheading">
               {moods[new Date().getDate() % moods.length]}
@@ -445,7 +445,7 @@ function App() {
           </article>
         </section>
         <footer>
-          EMI Group <span>•</span> Friends first, dues clear.{" "}
+          Shared EMI Manager <span>•</span> Friends first, dues clear.{" "}
           <strong>Created by Dhananjay Sathe</strong>
         </footer>
       </main>

@@ -1,4 +1,4 @@
-# EMI Group
+# Shared EMI Manager
 
 React dashboard for tracking shared EMI payments.
 
