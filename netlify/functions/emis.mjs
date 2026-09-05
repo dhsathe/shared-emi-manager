@@ -17,8 +17,9 @@ async function writeEmis(emis) {
 
 export default async function handler(request) {
   const path = new URL(request.url).pathname.split("/").filter(Boolean);
-  const resource = path[3];
-  const action = path[4];
+  const emisIndex = path.lastIndexOf("emis");
+  const resource = path[emisIndex + 1];
+  const action = path[emisIndex + 2];
   const id = Number(resource);
 
   if (request.method === "GET" && !resource) {
@@ -68,7 +69,7 @@ export default async function handler(request) {
     return json(updated);
   }
 
-  if (request.method === "DELETE" && !resource) {
+  if (request.method === "DELETE" && resource && !action) {
     emis.splice(index, 1);
     await writeEmis(emis);
     return new Response(null, { status: 204 });
